@@ -7,7 +7,7 @@
 int main(void)
 {
 	char c;
-
+	char nl = '\n';
 	for (c = 'a'; c <= 'z'; ++c)
 	{
 		if (c != 'e' && c != 'q')
@@ -15,5 +15,8 @@ int main(void)
 			putchar(c);
 		}
 	}
+
+	putchar(nl);
+
 	return (0);
 }

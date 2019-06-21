@@ -20,13 +20,13 @@ int main(void)
 					{
 					putchar(x);
 					putchar(y);
-					putchar(32);
+					putchar(' ');
 					putchar(z);
 					putchar(c);
 					if (x != 57 || y != 56 || z != 57 || c != 57)
 					{
-					putchar(44);
-					putchar(32);
+					putchar(',');
+					putchar(' ');
 					}
 					}
 				}

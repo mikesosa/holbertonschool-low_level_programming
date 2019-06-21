@@ -1,43 +1,38 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Patience
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n, b, c, d;
+	int x, y, z, c;
 
-	for (n = '0'; n <= '9'; n++)
+	for (x = 48 ; x <= 57 ; x++)
 	{
-		for (b = '0'; b <= '9'; b++)
+		for (y = 48 ; y <= 57 ; y++)
 		{
-			for (c = '0'; c <= '9'; c++)
+			for (z = 48 ; z <= 57 ; z++)
 			{
-				for (d = '1'; d <= '9'; d++)
+				for (c = 48 ; c <= 57 ; c++)
 				{
-					if (((n * 10) + b) < ((c * 10) + d))
+					if (((x * 10) + y) < ((z * 10) + c))
 					{
-						putchar(n);
-						putchar(b);
-						putchar(' ');
-						putchar(c);
-						putchar(d);
-						if (n != '9' || b != '8' || c != '9' || d != '9')
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					putchar(x);
+					putchar(y);
+					putchar(32);
+					putchar(z);
+					putchar(c);
+					if (x != 57 || y != 56 || z != 57 || c != 57)
+					{
+					putchar(44);
+					putchar(32);
 					}
-
+					}
 				}
-
-
 			}
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }

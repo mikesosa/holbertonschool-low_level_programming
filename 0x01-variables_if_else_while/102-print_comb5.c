@@ -8,13 +8,13 @@ int main(void)
 {
 	int x, y, z, c;
 
-	for (x = '0' ; x <= 57 ; x++)
+	for (x = '0' ; x <= '9' ; x++)
 	{
-		for (y = '0' ; y <= 57 ; y++)
+		for (y = '0' ; y <= '9' ; y++)
 		{
-			for (z = '0' ; z <= 57 ; z++)
+			for (z = '0' ; z <= '9' ; z++)
 			{
-				for (c = '0' ; c <= 57 ; c++)
+				for (c = '0' ; c <= '9' ; c++)
 				{
 					if (((x * 10) + y) < ((z * 10) + c))
 					{
@@ -23,7 +23,7 @@ int main(void)
 					putchar(' ');
 					putchar(z);
 					putchar(c);
-					if (x != 57 || y != 56 || z != 57 || c != 57)
+					if (x != '9' || y != '8' || z != '9' || c != '9')
 					{
 					putchar(',');
 					putchar(' ');

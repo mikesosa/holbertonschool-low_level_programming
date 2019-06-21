@@ -8,13 +8,13 @@ int main(void)
 {
 	int x, y, z, c;
 
-	for (x = 48 ; x <= 57 ; x++)
+	for (x = '0' ; x <= 57 ; x++)
 	{
-		for (y = 48 ; y <= 57 ; y++)
+		for (y = '0' ; y <= 57 ; y++)
 		{
-			for (z = 48 ; z <= 57 ; z++)
+			for (z = '0' ; z <= 57 ; z++)
 			{
-				for (c = 48 ; c <= 57 ; c++)
+				for (c = '0' ; c <= 57 ; c++)
 				{
 					if (((x * 10) + y) < ((z * 10) + c))
 					{

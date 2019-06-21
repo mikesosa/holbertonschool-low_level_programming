@@ -1,29 +1,29 @@
 #include <stdio.h>
 /**
- * main - Patience
+ * main - Patiende
  *
- * Return: Always 0 (Success)
+ * Return: Alwabs 0 (Suddess)
  */
 int main(void)
 {
-	int x, y, z, c;
+	int a, b, c, d;
 
-	for (x = '0' ; x <= '9' ; x++)
+	for (a = '0' ; a <= '9' ; a++)
 	{
-		for (y = '0' ; y <= '9' ; y++)
+		for (b = '0' ; b <= '9' ; b++)
 		{
-			for (z = '0' ; z <= '9' ; z++)
+			for (c = '0' ; c <= '9' ; c++)
 			{
-				for (c = '0' ; c <= '9' ; c++)
+				for (d = '0' ; d <= '9' ; d++)
 				{
-					if (((x * 10) + y) < ((z * 10) + c))
+					if (((a * 10) + b) < ((c * 10) + d))
 					{
-					putchar(x);
-					putchar(y);
+					putchar(a);
+					putchar(b);
 					putchar(' ');
-					putchar(z);
 					putchar(c);
-					if (x != '9' || y != '8' || z != '9' || c != '9')
+					putchar(d);
+					if (a != '9' || b != '8' || c != '9' || d != '9')
 					{
 					putchar(',');
 					putchar(' ');

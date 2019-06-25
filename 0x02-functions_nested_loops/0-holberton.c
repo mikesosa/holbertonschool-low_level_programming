@@ -7,14 +7,13 @@
  */
 int main(void)
 {
-	int c;
+	int c = 0;
+	char holberton[] = "Holberton\n";
 
-	char holberton[10] = "Holberton\n";
-
-	while (holberton[c] != '\0')
+	while (holberton[c] != 0)
 	{
 		_putchar(holberton[c]);
-	c++;
+		c++;
 	}
 	return (0);
 }

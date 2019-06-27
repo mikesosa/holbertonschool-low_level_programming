@@ -13,10 +13,13 @@ void print_number(int n)
 		if (n < 0)
 		{
 			n = n * -1;
-			int div;
 
-			for (div = 1; div <= n; div *= 10)
-			{ ; }
+			int div = 1;
+
+			while (div <= n)
+			{
+				div *= 10;
+			}
 			_putchar('-');
 
 			do {
@@ -26,10 +29,13 @@ void print_number(int n)
 			} while (n);
 		} else
 		{
-			int div;
+			int div = 1;
 
-			for (div = 1; div <= n; div *= 10)
-			{ ; }
+			while (div <= n)
+			{
+				div *= 10;
+			}
+
 			do {
 				div /= 10;
 				_putchar(48 + (n / div));

@@ -10,16 +10,16 @@ int main(void)
 
 	for (x = 1; x <= 100; x++)
 	{
-		int Fizz = x % 3;
-		int Buzz = x % 5;
+		int fizz = x % 3;
+		int buzz = x % 5;
 
-		if (Fizz == 0 && Buzz == 0)
+		if (fizz == 0 && buzz == 0)
 		{
 			printf("FizzBuzz ");
-		} else if (Fizz == 0)
+		} else if (fizz == 0)
 		{
 			printf("Fizz ");
-		} else if (Buzz == 0)
+		} else if (buzz == 0)
 		{
 			printf("Buzz ");
 		} else

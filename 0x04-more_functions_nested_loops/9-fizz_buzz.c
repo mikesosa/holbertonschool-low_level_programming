@@ -15,17 +15,25 @@ int main(void)
 
 		if (fizz == 0 && buzz == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		} else if (fizz == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		} else if (buzz == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		} else
 		{
-			printf("%d ", x);
+			printf("%d", x);
+		}
+		
+		if (x < 100)
+		{
+			printf(" ");
+		} else
+		{
+			printf("\n");	
 		}
 	}
-	printf("\n");
+	return(0);
 }

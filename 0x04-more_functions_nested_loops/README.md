@@ -1,1 +1,1 @@
-<h1>All about nedted loops and functions</h1>
+<h1>All about nested loops and functions</h1>

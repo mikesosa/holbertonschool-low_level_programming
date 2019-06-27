@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - printing n times _
+ * print_diagonal - printing n times
  * @n: the char to print
  * Return: no return
  */
@@ -23,10 +23,10 @@ void print_diagonal(int n)
 			{
 				for (int j = 1; j <= x; j++)
 				{
-					_putchar(32);
+					_putchar(' ');
 				}
 			}
 		}
 	}
-
+	_putchar('\n');
 }

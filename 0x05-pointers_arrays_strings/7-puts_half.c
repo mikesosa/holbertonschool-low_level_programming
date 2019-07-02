@@ -7,7 +7,7 @@
  */
 void puts_half(char *str)
 {
-	int x;
+	int x, even, odd;
 
 	x = 0;
 	while (str[x] != '\0')
@@ -17,32 +17,17 @@ void puts_half(char *str)
 
 	if (x % 2 == 0)
 	{
-
-		x /= 2;
-		for (; str[x] != '\0' ; x++)
+		for (even = x / 2; str[even] != 0; even++)
 		{
-			_putchar(str[x]);
+			_putchar(str[even]);
 		}
-
 	} else
 	{
-		if (x <= 2)
+		for (odd = (x + 1) / 2 ; str[odd] != '\0'; odd++)
 		{
-			x = x - 1;
-			for (; str[x] != '\0' ; x++)
-			{
-				_putchar(str[x]);
-			}
-		} else
-		{
-			x = (x - 1) / 2;
-			for (; str[x] != '\0' ; x++)
-			{
-				_putchar(str[x + 1]);
-			}
+			_putchar(str[odd]);
 		}
 	}
 
 	_putchar('\n');
-
 }

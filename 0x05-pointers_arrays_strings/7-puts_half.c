@@ -7,16 +7,13 @@
  */
 void puts_half(char *str)
 {
-
 	int x;
 
 	x = 0;
-
 	while (str[x] != '\0')
 	{
 		x++;
 	}
-
 
 	if (x % 2 == 0)
 	{
@@ -29,10 +26,20 @@ void puts_half(char *str)
 
 	} else
 	{
-		x = (x - 1) / 2;
-		for (; str[x] != '\0' ; x++)
+		if (x <= 2)
 		{
-			_putchar(str[x]);
+			x = x - 1;
+			for (; str[x] != '\0' ; x++)
+			{
+				_putchar(str[x]);
+			}
+		} else
+		{
+			x = (x - 1) / 2;
+			for (; str[x] != '\0' ; x++)
+			{
+				_putchar(str[x + 1]);
+			}
 		}
 	}
 

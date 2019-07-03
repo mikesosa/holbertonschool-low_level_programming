@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * puts_half - function to reverse strings.
- * @str: the string
+ * _atoi - function to reverse strings.
+ * @s: the string
  * Return: void.
  */
 int _atoi(char *s)
@@ -12,7 +12,7 @@ int _atoi(char *s)
 	a = 0;
 	d = 1;
 
-	for (i = 0 ; s[c] != '\0' ; c++)
+	for (c = 0 ; s[c] != '\0' ; c++)
 	{
 		b = s[c];
 
@@ -40,8 +40,7 @@ int _atoi(char *s)
 	if (a != 0)
 	{
 		return (a);
-	} else
-	{
-		return (0);
 	}
+
+	return (0);
 }

@@ -11,7 +11,7 @@ char *_strstr(char *haystack, char *needle)
 	char *first;
 	char *word;
 
-	while (haystack != 0)
+	while (*haystack != 0)
 	{
 		first = haystack;
 		word = needle;
@@ -20,11 +20,6 @@ char *_strstr(char *haystack, char *needle)
 		{
 			haystack++;
 			word++;
-		}
-
-		if (*haystack == 0)
-		{
-			return (0);
 		}
 
 		if (*word == 0)

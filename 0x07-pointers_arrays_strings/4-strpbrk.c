@@ -8,15 +8,15 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, k;
+	unsigned int count1, count2;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (count1 = 0 ; s[count1] != '\0' ; count1++)
 	{
-		for (k = 0; s[k] != '\0'; k++)
+		for (count2 = 0 ; accept[count2] != '\0' ; count2++)
 		{
-			if (s[i] == accept[k])
+			if (accept[count2] == s[count1])
 			{
-				return (s + i);
+				return (s + count1);
 			}
 		}
 	}

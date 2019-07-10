@@ -1,11 +1,9 @@
 #include "holberton.h"
 
 /**
- * *_memcpy - filling n times the memory with other array
- * @dest: variable of destiny
- * @src: where to take bits from
- * @n: number of chars to pass
- * Return: the new value of s.
+ * _puts_recursion - printing with _putchar
+ * @s: string of chars
+ * Return: void.
  */
 void _puts_recursion(char *s)
 {

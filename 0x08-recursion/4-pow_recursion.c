@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * factorial - factorial of a number
+ * _pow_recursion - factorial of a number
  * @x: number to factorial
  * @y: number to factorial
  * Return: void.

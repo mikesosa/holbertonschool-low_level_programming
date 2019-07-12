@@ -1,6 +1,11 @@
 #include "holberton.h"
 
-
+/**
+ * rest - function that discounts the money
+ * @cnt: num of coins
+ * @num: number entered by the user
+ * Return: the number of coins to give
+ */
 int rest(int cnt, int num)
 {
 	while (num >= 25)
@@ -35,9 +40,8 @@ int rest(int cnt, int num)
  * main - function that prints the sum of arguments
  * @argc: num of arguments
  * @argv: array of arguments
- * Return: 0 if there are no argumentes passed, Error if the args ar not ints
+ * Return: Error if more that one argument, 0 if negatives numbers
  */
-
 int main(int argc, char *argv[])
 {
 	int cnt = 0;

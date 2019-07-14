@@ -1,44 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-
-/**
- * rest - function that discounts the money
- * @cnt: num of coins
- * @num: number entered by the user
- * Return: the number of coins to give
- */
-int rest(int cnt, int num)
-{
-	while (num >= 25)
-	{
-		num -= 25;
-		cnt++;
-	}
-	while (num >= 10)
-	{
-		num -= 10;
-		cnt++;
-	}
-	while (num >= 5)
-	{
-		num -= 5;
-		cnt++;
-	}
-	while (num >= 2)
-	{
-		num -= 2;
-		cnt++;
-	}
-	while (num >= 1)
-	{
-		num -= 1;
-		cnt++;
-	}
-	printf("%d\n", cnt);
-	return (0);
-}
 /**
  * main - function that prints the sum of arguments
  * @argc: num of arguments
@@ -47,21 +7,44 @@ int rest(int cnt, int num)
  */
 int main(int argc, char *argv[])
 {
-	int cnt = 0;
+int number;
+int count = 0;
 
-	if (argc != 2)
+if (argc != 2)
+{
+	printf("Error\n");
+	return (1);
+}
+
+number = atoi(argv[1]);
+	if (number > 0)
 	{
-		printf("Error\n");
-		return (0);
+		while (number >= 25)
+		{
+			number -= 25;
+			count++;
+		}
+		while (number >= 10)
+		{
+			number -= 10;
+			count++;
+		}
+		while (number >= 5)
+		{
+			number -= 5;
+			count++;
+		}
+		while (number >= 2)
+		{
+			number -= 2;
+			count++;
+		}
+		while (number >= 1)
+		{
+			number -= 1;
+			count++;
+		}
 	}
-
-	int num = atoi(argv[1]);
-
-	if (num > 0)
-		rest(cnt, num);
-	else
-	{
-		printf("0\n");
-		return (0);
-	}
+	printf("%d\n", count);
+	return (0);
 }

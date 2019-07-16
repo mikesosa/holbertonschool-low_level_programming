@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-
+#include <limits.h>
 /**
  * **alloc_grid - returns a pointer of two dimensional array
  * @width: Source widht of matrix

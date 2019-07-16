@@ -6,5 +6,5 @@
 <p>4- Write a function that frees a 2 dimensional grid previously created by your alloc_grid function.</p>
 <p>5- Write a function that concatenates all the arguments of your program.</p>
 <h2>Advanced</h2>
-<p>Write a function that splits a string into words.i</p>
-<span>Solved by: Michael Sosa</span>
+<p>6- Write a function that splits a string into words.</p>
+<small>Solved by: Michael Sosa</small>

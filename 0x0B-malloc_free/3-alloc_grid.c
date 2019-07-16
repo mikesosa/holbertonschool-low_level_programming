@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <limits.h>
+
 /**
  * **alloc_grid - returns a pointer of two dimensional array
  * @width: Source widht of matrix
@@ -15,16 +15,16 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	if (width > INT_MAX || height > INT_MAX)
-		return (NULL);
 	dest = malloc(height * sizeof(int *));
 
 	if (dest == NULL)
+		free(dest);
 		return (0);
 	while (i < height)
 	{
 		dest[i] = malloc(width * sizeof(int));
 		if (dest[i] == NULL)
+			free(dest);
 			return (0);
 		i++;
 	}

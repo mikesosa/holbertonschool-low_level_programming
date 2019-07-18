@@ -1,2 +1,2 @@
-<h1>All about low level in C</h1>
+<h1>All about lowlevel in C</h1>
 # holbertonschool-low_level_programming

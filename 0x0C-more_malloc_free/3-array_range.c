@@ -17,8 +17,7 @@ int *array_range(int min, int max)
 	pointer = malloc(s_arr * sizeof(int));
 	if (pointer == NULL)
 		return (NULL);
-
-	while (0 <= s_arr)
+	while (s_arr > 0)
 	{
 		pointer[i] = min;
 		s_arr--;

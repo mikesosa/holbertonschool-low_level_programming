@@ -10,9 +10,7 @@ int size(char *s)
 	int i;
 
 	while (s[i])
-	{
 		i++;
-	}
 	return (i);
 }
 
@@ -78,7 +76,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			j++;
 			i++;
 		}
-		p[i] = s2[j];
+		p[i] = '\0';
 		return (p);
 	}
 

@@ -1,5 +1,4 @@
-<h1>Function pointers</h1>
-<small>I'm getting better with README'S lol</small>
+<h1>Function pointers<small>(I'm getting better with README'S lol)</small></h1>
 <h2>What I've learn from this porject</h2>
 <p>What are function pointers and how to use them</p>
 <p>What does a function pointer exactly hold</p>

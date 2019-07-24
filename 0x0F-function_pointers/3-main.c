@@ -28,13 +28,19 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 
-	if (argv[2][1] != '\0')
+	switch (argv[2][0])
 	{
-		printf("Error\n");
-		exit(99);
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+		case '%':
+			result = get_op_func(argv[2])(val1, val2);
+			break;
+		default:
+			printf("Error\n");
+			exit(99);
 	}
-
-	result = get_op_func(argv[2])(val1, val2);
 	printf("%d\n", result);
 	return (0);
 }

@@ -1,4 +1,4 @@
-<h1>Function pointers<small>(I'm getting better with README'S lol)</small></h1>
+<h1>Function pointers</h1>
 <h2>What I've learn from this porject</h2>
 <p>What are function pointers and how to use them</p>
 <p>What does a function pointer exactly hold</p>
@@ -12,3 +12,4 @@
 <li>4- Write a program that prints the opcodes of its own main function.</li>
 </ul>
 <small><strong>Solved by:</strong> Mike Sosa</small>
+<small>(I'm getting better with README'S lol)</small>

@@ -1,5 +1,5 @@
 <h1>Variadic functions</h1>
-<h2>What I've learn from this porject</h2>
+<h2>What I've learned from this porject</h2>
 <p>What are variadic functions</p>
 <p>How to use va_start, va_arg and va_end macros</p>
 <p>Why and how to use the const type qualifier</p>

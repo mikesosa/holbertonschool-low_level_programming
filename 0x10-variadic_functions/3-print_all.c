@@ -1,9 +1,8 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - prints only the strings
- * @separator: the thing printed between the strings
- * @n: number of args passed
+ * print_all - prints all formats passed
+ * @format: the formats addmited by my function
  * Return: Nothing.
  */
 

@@ -15,4 +15,4 @@
 	</tr>
 </table>
 <br>
-<strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa</a></strong><small>for Holberton School 2019</small>
+<strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa </a></strong><small>for Holberton School 2019</small>

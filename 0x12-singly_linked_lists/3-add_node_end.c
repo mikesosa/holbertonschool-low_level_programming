@@ -44,4 +44,4 @@ list_t *add_node_end(list_t **head, const char *str)
 		last = last->next;/*last will be the next of the last*/
 	last->next = new;/*in case next is null already*/
 	return (*head);
-
+}

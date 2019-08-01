@@ -25,6 +25,10 @@
 		<td>2-add_node.c</td>
 		<td>Adds a new node at the beginning of a list_t list.</td>
 	</tr>
+	<tr>
+		<td>3-add_node_end.c</td>
+		<td>Adds a new node at the end of a list_t list.</td>
+	</tr>
 </table>
 <br>
 <strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa </a></strong><small>for Holberton School 2019</small>

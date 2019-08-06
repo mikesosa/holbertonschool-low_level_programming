@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * print_listint - Function prints all nodes of a linked list
  * @h: The head node
@@ -10,9 +11,9 @@ size_t print_listint(const listint_t *h)
 
 	while (h)
 	{
-		cnt++;
 		printf("%d\n", h->n);
 		h = h->next;
+		cnt++;
 	}
 	return (cnt);
 }

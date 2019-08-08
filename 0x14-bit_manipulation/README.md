@@ -17,6 +17,10 @@
 		<td>0-binary_to_uint.c</td>
 		<td>Converts Binary to decimal</td>
 	</tr>
+	<tr>
+		<td>1-print_binary.c</td>
+		<td>Converts decimal to binary</td>
+	</tr>
 </table>
 <br>
 <strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa </a></strong><small>for Holberton School 2019</small>

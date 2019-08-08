@@ -7,7 +7,7 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int count = 0, tmp = n, i = 0, j = 0, k;
+	int count = 0, tmp = n, i = 0, j = 0;
 	int num[1024];
 
 	if (index >= sizeof(n) * 128)
@@ -19,14 +19,13 @@ int get_bit(unsigned long int n, unsigned int index)
 		tmp = tmp >> 1;
 		count++;
 	}
-	k = count - index - 1;
 	for (count -= 1; count >= 0; count--, j++)
 	{
 		i = n >> count;
 		if (i & 1)
-			num[j] = 1;
+			num[count] = 1;
 		else
-			num[j] = 0;
+			num[count] = 0;
 	}
-	return (num[k]);
+	return (num[index]);
 }

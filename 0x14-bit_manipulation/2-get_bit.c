@@ -7,27 +7,25 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int temp = n;
-	int count = 0;
-	int i;
-	int array[1024];
+	int count = 0, tmp = n, i = 0, j = 0;
+	int num[1024];
 
 	if (index >= sizeof(n) * 8)
 		return (-1);
 	if (n == 0 && index == 0)
 		return (0);
-	while (temp > 0)
+	while (tmp > 0)
 	{
-		temp = temp >> 1;
+		tmp = tmp >> 1;
 		count++;
 	}
-	for (count -= 1; count >= 0; count--)
+	for (count -= 1; count >= 0; count--, j++)
 	{
 		i = n >> count;
 		if (i & 1)
-			array[count] = 1;
+			num[count] = 1;
 		else
-			array[count] = 0;
+			num[count] = 0;
 	}
-	return (array[index]);
+	return (num[index]);
 }

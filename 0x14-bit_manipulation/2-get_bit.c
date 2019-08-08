@@ -10,8 +10,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	int count = 0, tmp = n, i = 0, j = 0, k;
 	int num[1024];
 
-	if (!n)
+	if (index >= sizeof(n) * 128)
 		return (-1);
+	if (n == 0 && index == 0)
+		return (0);
 	while (tmp > 0)
 	{
 		tmp = tmp >> 1;

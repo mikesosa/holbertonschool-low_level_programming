@@ -38,12 +38,12 @@ unsigned int binary_to_uint(const char *b)
 	int j = 0, operand = 0, len = 0;
 	unsigned int result = 0;
 
-	len = _strlen((char *) b);
-	if (b == NULL)
+	if (!b)
 		return (0);
+	len = _strlen((char *) b);
 	while (b[j] != '\0')
 	{
-		if ((b[j] != 49) && (b[j] != 48))
+		if (b[j] < 48 || b[j] > 49)
 			return (0);
 		operand = x_to_the_n(2, j);
 		if (b[len - 1] == 49)/*Ascci code of 1*/

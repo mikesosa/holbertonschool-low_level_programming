@@ -7,9 +7,8 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file;
+	int w, file, result;
 	char *buf;
-	int result;
 
 	buf = malloc(sizeof(char) * letters + 1);
 	if (!buf || !filename)
@@ -30,7 +29,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	buf[letters + 1] = '\0';/*Null char at the end*/
 	close(file);
-	printf("%s", buf);
+	w = write(STDOUT_FILENO, buf, letters + 1);/*printf not allowed*/
+	if (w == -1)
+	{
+		close(file);
+		free(buf);
+		return (0);
+	}
 	free(buf);
 	return (result);
 }

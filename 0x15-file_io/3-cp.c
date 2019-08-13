@@ -22,18 +22,20 @@ int copy_files(char *filefrom, char *fileto)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
 		exit(99);
 	}
-	r = read(from, buf, 1024);/*READING FROM FILE FROM*/
-	if (r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
-		exit(98);
-	}
-	w = write(to, buf, r);/*WRITING TO FILE TO*/
-	if (w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-		exit(99);
-	}
+	do {
+		r = read(from, buf, 1024);
+		if (r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
+			exit(98);
+		}
+		w = write(to, buf, r);/*WRITING TO FILE TO*/
+		if (w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
+			exit(99);
+		}
+	} while (r);
 	c = close(from);
 	if (c == -1)
 	{

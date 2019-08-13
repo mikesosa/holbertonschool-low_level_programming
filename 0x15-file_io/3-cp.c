@@ -29,11 +29,14 @@ int copy_files(char *filefrom, char *fileto)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 			exit(98);
 		}
-		w = write(to, buf, r);/*WRITING TO FILE TO*/
-		if (w == -1)
+		if (r)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-			exit(99);
+			w = write(to, buf, r);/*WRITING TO FILE TO*/
+			if (w == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
+				exit(99);
+			}
 		}
 	} while (r);
 	c = close(from);

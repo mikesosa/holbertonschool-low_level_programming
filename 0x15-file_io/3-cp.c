@@ -10,34 +10,34 @@ int copy_files(char *filefrom, char *fileto)
 	int from, to, r, w, c;
 	char buf[1024];
 
-	from = open(filefrom, O_RDWR);/*OPENING FIRST FILE*/
+	from = open(filefrom, O_RDONLY);/*OPENING FIRST FILE*/
 	if (from == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
 	to = open(fileto, O_CREAT | O_WRONLY | O_TRUNC, 0664);/*OPENING SECOND FILE*/
 	if (from == -1)
 	{
-		dprintf(2, "Error: Can't write to file %s\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
 		exit(99);
 	}
 	r = read(from, buf, 1024);/*READING FROM FILE FROM*/
 	if (r == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
 	w = write(to, buf, r);/*WRITING TO FILE TO*/
 	if (w == -1)
 	{
-		dprintf(2, "Error: Can't write to file %s\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
 		exit(99);
 	}
 	c = close(from);
 	if (c == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", from);
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", from);
 		exit(100);
 	}
 	c = close(to);
@@ -60,7 +60,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s filename text\n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: %s filename text\n", av[0]);
 		exit(97);
 	}
 	res = copy_files(av[1], av[2]);

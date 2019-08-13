@@ -13,6 +13,10 @@
 		<td>0-read_textfile.c</td>
 		<td>Function that reads a text file and prints it to the POSIX standard output</td>
 	</tr>
+	<tr>
+		<td>1-create_file</td>
+		<td>Function that creates a file and add txt into it</td>
+	</tr>
 </table>
 <br>
 <strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa </a></strong><small>for Holberton School 2019</small>

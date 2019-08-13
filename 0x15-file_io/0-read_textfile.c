@@ -28,14 +28,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buf[letters + 1] = '\0';/*Null char at the end*/
-	close(file);
-	w = write(STDOUT_FILENO, buf, letters + 1);/*printf not allowed*/
+	w = write(STDOUT_FILENO, buf, letters);/*printf not allowed*/
 	if (w == -1)
 	{
 		close(file);
 		free(buf);
 		return (0);
 	}
+	close(file);
 	free(buf);
 	return (result);
 }

@@ -5,7 +5,7 @@
  * @fileto: dest file:
  * Return: 98 99 100 if fails @1 if works
  */
-int copy_files(char *filefrom, char *fileto)
+void copy_files(char *filefrom, char *fileto)
 {
 	int from, to, r, w, c;
 	char buf[1024] = {0};
@@ -31,11 +31,14 @@ int copy_files(char *filefrom, char *fileto)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 			exit(98);
 		}
-		w = write(to, buf, r);/*WRITING TO FILE TO*/
-		if (w == -1)
+		if (r)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-			exit(99);
+			w = write(to, buf, r);/*WRITING TO FILE TO*/
+			if (w == -1)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
+				exit(99);
+			}
 		}
 	}
 	c = close(from);
@@ -50,7 +53,6 @@ int copy_files(char *filefrom, char *fileto)
 		dprintf(2, "Error: Can't close fd %d\n", to);
 		exit(100);
 	}
-	return (1);
 }
 /**
  * main -  main fucntion
@@ -58,14 +60,13 @@ int copy_files(char *filefrom, char *fileto)
  * @av: arguments passed
  * Return: 0 if ok
  */
-void main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int res;
-
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	copy_files(av[1], av[2]);
+	return (0);
 }

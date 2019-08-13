@@ -16,29 +16,28 @@ int copy_files(char *filefrom, char *fileto)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
-	to = open(fileto, O_CREAT | O_WRONLY | O_TRUNC, 0664);/*OPENING SECOND FILE*/
+	to = open(fileto, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);/*OPENING SECOND FILE*/
 	if (from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
 		exit(99);
 	}
-	do {
+	r = 1024;
+	while (r > 0)
+	{
 		r = read(from, buf, 1024);
 		if (r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 			exit(98);
 		}
-		if (r)
+		w = write(to, buf, r);/*WRITING TO FILE TO*/
+		if (w == -1)
 		{
-			w = write(to, buf, r);/*WRITING TO FILE TO*/
-			if (w == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-				exit(99);
-			}
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
+			exit(99);
 		}
-	} while (r);
+	}
 	c = close(from);
 	if (c == -1)
 	{

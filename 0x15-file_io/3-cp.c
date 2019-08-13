@@ -8,7 +8,7 @@
 int copy_files(char *filefrom, char *fileto)
 {
 	int from, to, r, w, c;
-	char buf[1024];
+	char buf[1024] = {0};
 
 	from = open(filefrom, O_RDONLY);/*OPENING FIRST FILE*/
 	if (from == -1)
@@ -37,7 +37,7 @@ int copy_files(char *filefrom, char *fileto)
 	c = close(from);
 	if (c == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
 		exit(100);
 	}
 	c = close(to);

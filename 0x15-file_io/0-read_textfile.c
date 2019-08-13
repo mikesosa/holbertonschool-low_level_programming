@@ -12,15 +12,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int result;
 
 	buf = malloc(sizeof(char) * letters + 1);
-	if (!buf)
-		return (-1);
-	buf[letters + 1] = '\0';/*Null char at the end*/
+	if (!buf || !filename)
+		return (0);
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		return (-1);
+	{
+		close(file);
+		free(buf);
+		return (0);
+	}
 	result = read(file, buf, letters);
 	if (result == -1)
-		return (-1);
+	{
+		close(file);
+		free(buf);
+		return (0);
+	}
+	buf[letters + 1] = '\0';/*Null char at the end*/
 	close(file);
 	printf("%s", buf);
 	free(buf);

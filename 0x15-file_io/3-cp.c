@@ -58,16 +58,14 @@ int copy_files(char *filefrom, char *fileto)
  * @av: arguments passed
  * Return: 0 if ok
  */
-int main(int ac, char **av)
+void main(int ac, char **av)
 {
 	int res;
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s filename text\n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	res = copy_files(av[1], av[2]);
-	printf("-> %i)\n", res);
-	return (0);
+	copy_files(av[1], av[2]);
 }

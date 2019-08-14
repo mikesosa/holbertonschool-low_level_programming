@@ -28,11 +28,11 @@ void close_error100(int file)
 }
 int main(int argc, char **argv)
 {
-	int file = -1;
-	int file2 = -1;
-	int reading = -1;
-	int writing = -1;
-	int closing = -1;
+	int file;
+	int file2;
+	int reading;
+	int writing;
+	int closing;
 	char s[1024] = {0};
 
 	argument_error97(argc);
@@ -42,7 +42,8 @@ int main(int argc, char **argv)
 	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file2 == -1)
 		write_error99(argv[2]);
-	do {
+	while(reading)
+	{
 		reading = read(file, s, 1024);
 		if (reading == -1)
 			read_error98(argv[1]);
@@ -52,7 +53,7 @@ int main(int argc, char **argv)
 			if (writing == -1)
 				write_error99(argv[2]);
 		}
-	} while (reading);
+	}
 	closing = close(file);
 	if (closing == -1)
 		close_error100(file);

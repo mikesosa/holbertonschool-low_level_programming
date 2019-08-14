@@ -28,11 +28,11 @@ void close_error100(int file)
 }
 int main(int argc, char **argv)
 {
-	int file;
-	int file2;
-	int reading;
-	int writing;
-	int closing;
+	int file = 0;
+	int file2 = 0;
+	int reading = 0;
+	int writing = 0;
+	int closing = 0;
 	char s[1024] = {0};
 
 	argument_error97(argc);

@@ -1,72 +1,64 @@
 #include "holberton.h"
-/**
- * copy_files - functian that copies the content to other file
- * @filefrom: sourcefile
- * @fileto: dest file:
- * Return: 98 99 100 if fails @1 if works
- */
-void copy_files(char *filefrom, char *fileto)
+void argument_error97(int arguments)
 {
-	int from, to, r, w, c;
-	char buf[1024] = {0};
-
-	from = open(filefrom, O_RDONLY);/*OPENING FIRST FILE*/
-	if (from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
-		exit(98);
-	}
-	to = open(fileto, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);/*OPENING SECOND FILE*/
-	if (from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-		exit(99);
-	}
-	r = 1024;
-	while (r > 0)
-	{
-		r = read(from, buf, 1024);
-		if (r == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
-			exit(98);
-		}
-		if (r)
-		{
-			w = write(to, buf, r);/*WRITING TO FILE TO*/
-			if (w == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", fileto);
-				exit(99);
-			}
-		}
-	}
-	c = close(from);
-	if (c == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
-		exit(100);
-	}
-	c = close(to);
-	if (c == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", to);
-		exit(100);
-	}
-}
-/**
- * main -  main fucntion
- * @ac: Numer of arguments passed
- * @av: arguments passed
- * Return: 0 if ok
- */
-int main(int ac, char **av)
-{
-	if (ac != 3)
+	if (arguments != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	copy_files(av[1], av[2]);
+}
+
+
+void read_error98(char *file)
+{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+	exit(98);
+}
+
+void write_error99(char *file)
+{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+	exit(99);
+}
+
+void close_error100(int file)
+{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+	exit(100);
+}
+int main(int argc, char **argv)
+{
+	int file = -1;
+	int file2 = -1;
+	int reading = -1;
+	int writing = -1;
+	int closing = -1;
+	char s[1024] = {0};
+
+	argument_error97(argc);
+	file = open(argv[1], O_RDONLY);
+	if (file == -1)
+		read_error98(argv[1]);
+	file2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (file2 == -1)
+		write_error99(argv[2]);
+	do {
+		reading = read(file, s, 1024);
+		if (reading == -1)
+			read_error98(argv[1]);
+		if (reading)
+		{
+			writing = write(file2, s, reading);
+			if (writing == -1)
+				write_error99(argv[2]);
+		}
+	} while (reading);
+	closing = close(file);
+	if (closing == -1)
+		close_error100(file);
+	closing = close(file2);
+	if (closing == -1)
+		close_error100(file2);
 	return (0);
 }
+

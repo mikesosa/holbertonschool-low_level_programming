@@ -21,6 +21,10 @@
 		<td>2-append_text_to_file</td>
 		<td>Appends text to a precreated file</td>
 	</tr>
+	<tr>
+		<td>3-cp.c</td>
+		<td>Function that copies a file</td>
+	</tr>
 </table>
 <br>
 <strong>Author: <a href="https://twitter.com/micael_sosa" target="_blank">Michael Sosa </a></strong><small>for Holberton School 2019</small>

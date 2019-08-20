@@ -14,15 +14,14 @@
 				</h2>
 				<h3>
 					<a href="https://github.com/mikesosa/printf">printf</a>
-					<p>I wrote my own printf function with <a href="https://twitter.com/rdiegovivas" rel="nofollow">Diego Vivas</a>. This project had restrictions regarding the use of several functions and libraries, so my partner and I had to write our own functions that behaved similar to their standard counterparts. All of these files had to compile and work together to function as a printf substitute. This project challenged us when we were learning about string manipulation and memory management.</p>
 				</h3>
+				<p>I wrote my own printf function with <a href="https://twitter.com/rdiegovivas" rel="nofollow">Diego Vivas</a>. This project had restrictions regarding the use of several functions and libraries, so my partner and I had to write our own functions that behaved similar to their standard counterparts. All of these files had to compile and work together to function as a printf substitute. This project challenged us when we were learning about string manipulation and memory management.</p>
 				<h3>
 					<a href="https://github.com/mikesosa/simple_shell">simple_shell</a>
 				</h3>
 				<p>I wrote my own shell with <a href="https://twitter.com/Dr2d4">Daniel Rodriguez</a>. It is a simple version of the sh shell. All the outputs and exit statuses should return the same as sh's. This project focused on memory, sys calls, and pointers to pointers. Like the project above, there were limitations</p>
 				<h2>
 					Description of Each Directory
-				</tr>
 				</h2>
 				<hr>
 				<table>

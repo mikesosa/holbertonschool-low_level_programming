@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>holbertonschool-low_level_programming/README.md at master · mikesosa/holbertonschool-low_level_programming · GitHub</title>
-	</head>
 	<body>
 			<article>
 				<h1>

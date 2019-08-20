@@ -3,7 +3,7 @@
 	<body>
 			<article>
 				<h1>
-					holbertonschool-low_level_programming
+					Low Level Programming at Holberton School
 				</h1>
 				<h2>
 					Introduction

@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - Adding a node to the end of list
+ * get_dnodeint_at_index - retrieves some node at some index
  * @head: head node given by main
- * @n: data to store in the new node
+ * @index: index given by main
  *
- * Return: New node
+ * Return: returns node
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {

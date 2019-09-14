@@ -1,2 +1,0 @@
-all:
-	gcc -Wall -pedantic -Werror -Wextra 0-main.c 0-print_dlistint.c -o a

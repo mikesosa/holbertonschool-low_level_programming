@@ -34,6 +34,14 @@
 							<td><code>1-create_dynamic_lib.sh</code></td>
 							<td>Bash script that creates a Dynamic library with all C files in the current directory</td>
 						</tr>
+						<tr>
+							<td><code>100-operations.c</code></td>
+							<td>C file that contains math operations (I don't know if I need it lol)</td>
+						</tr>
+						<tr>
+							<td><code>100-operations.so</code></td>
+							<td>Dynamic Shared Library with math operations needed for a Python Program </td>
+						</tr>
 					</tbody>
 				</table>
 				<hr>

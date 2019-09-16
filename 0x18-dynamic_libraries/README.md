@@ -32,7 +32,7 @@
 						</tr>
 						<tr>
 							<td><code>1-create_dynamic_lib.sh</code></td>
-							<td>Bash scrip that creates a Dynamic library with all C files in the current directory</td>
+							<td>Bash script that creates a Dynamic library with all C files in the current directory</td>
 						</tr>
 					</tbody>
 				</table>

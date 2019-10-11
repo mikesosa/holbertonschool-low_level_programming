@@ -3,6 +3,14 @@
 #include <stdio.h>
 #include "hash_tables.h"
 
+/**
+ * hash_table_set - sets a hash table with nodes
+ * @key: key to store the node
+ * @value: value of the node
+ * @ht: hash table
+ *
+ * Return: 1 if sucsess 0 if failed
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
@@ -15,7 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((unsigned char *)key, ht->size);
 	check = ht->array[index];
-	
+
 	while (check) /* check if the key already exists, if so replace. */
 	{
 		if (!strcmp(key, check->key)) /* strcmp returns 0 if matches */

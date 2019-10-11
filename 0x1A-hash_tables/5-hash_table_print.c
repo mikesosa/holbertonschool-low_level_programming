@@ -16,6 +16,8 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned int index = 0;
 	char *s = "";
 
+	if (!ht) /* If theres is not table */
+		return;
 	putchar('{'); /* doing this for the format */
 
 	while (index < ht->size)
@@ -34,6 +36,6 @@ void hash_table_print(const hash_table_t *ht)
 		index++;
 	}
 	putchar('}');
-	putchar(10);
+	putchar('\n');
 }
 

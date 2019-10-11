@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include "hash_tables.h"
 
+/**
+ * hash_table_get - get value using key
+ * @ht: hast table
+ * @key: used to get the value
+ *
+ * Return: the value or NULL if not key like that
+ */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = 0;
@@ -12,7 +19,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL); /* edge case checks */
 
 	index = key_index((const unsigned char *)key, ht->size);
-	
+
 	check = ht->array[index];
 	while (check)
 	{ /* check all the linked lists in this index */

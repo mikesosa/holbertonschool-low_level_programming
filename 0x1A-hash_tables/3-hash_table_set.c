@@ -40,10 +40,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = malloc(sizeof(hash_node_t)); /* malloc a node */
 	if (!new) /* malloc error */
 		return (0);
-
-	new->key = strdup(key); /* dup key */
-	new->value = strdup(value); /* dup value */
-
+	new->key = strdup(key);
+	if (!(new->key))
+	{ /* error with dup key, free previous steps and exit */
+		free(new);
+		return (0);
+	}
+	new->value = strdup(value);
+	if (!(new->value))
+	{ /* error with dup val, free previous steps and exit */
+		free(new->key);
+		free(new);
+		return (0);
+	}
 	new->next = ht->array[index]; /* make the new node be the first */
 	ht->array[index] = new;
 	return (1);

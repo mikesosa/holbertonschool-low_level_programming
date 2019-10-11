@@ -28,7 +28,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(key, check->key)) /* strcmp returns 0 if matches */
 		{
-			printf("%s and %s", key, value);
 			free(check->value); /* get rid of old value, replace it */
 			check->value = strdup(value); /* str dup reallocs */
 			if (check->value)
@@ -37,22 +36,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		check = check->next;
 	}
+
 	new = malloc(sizeof(hash_node_t)); /* malloc a node */
 	if (!new) /* malloc error */
 		return (0);
-	new->key = strdup(key);
-	if (!(new->key))
-	{ /* error with dup key, free previous steps and exit */
-		free(new);
-		return (0);
-	}
-	new->value = strdup(value);
-	if (!(new->value))
-	{ /* error with dup val, free previous steps and exit */
-		free(new->key);
-		free(new);
-		return (0);
-	}
+
+	new->key = strdup(key); /* dup key */
+	new->value = strdup(value); /* dup value */
+
 	new->next = ht->array[index]; /* make the new node be the first */
 	ht->array[index] = new;
 	return (1);

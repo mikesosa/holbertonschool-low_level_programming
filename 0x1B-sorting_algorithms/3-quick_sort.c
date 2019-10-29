@@ -1,12 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "sort.h"
+
 /**
- *partition - Partition for the quicksort using the Lomuto scheme
- *@array: array to sort
- *@low: Lowest index of the partition
- *@high: highest index of the partition
- *@size: size of the array
- *Return: position where the partition was made
+ * partition - Partition for the quicksort using the Lomuto scheme
+ * @array: array to sort
+ * @low: Lowest index of the partition
+ * @high: highest index of the partition
+ * @size: size of the array
+ * Return: position where the partition was made
  */
+
 size_t partition(int *array, int low, int high, size_t size)
 {
 	int i, n;

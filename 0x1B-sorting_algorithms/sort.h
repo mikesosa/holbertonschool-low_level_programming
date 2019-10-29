@@ -24,5 +24,6 @@ void insertion_sort_list(listint_t **list);
 void quick_sort(int *array, size_t size);
 size_t partition(int *array, int lo, int hi, size_t size);
 void quicksort(int *array, int lo, int hi, size_t size);
+void counting_sort(int *array, size_t size);
 
 #endif

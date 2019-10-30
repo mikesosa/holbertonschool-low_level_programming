@@ -11,28 +11,28 @@
  */
 void filling_array(int *array, int *new_array, int k)
 {
-	int last_n = 0, s_position = 0, j, x;
+	int last_n = 0, s_position = 0, j, coincidences;
 
 	for (j = 0; j <= k; j++)
 	{
 		if (new_array[j] > last_n)
 		{
-			x = new_array[j] - last_n;
-			while(x)
+			coincidences = new_array[j] - last_n;
+			while (coincidences)
 			{
 				array[s_position] = j;
 				last_n = new_array[j];
 				s_position++;
-				x--;
+				coincidences--;
 			}
 		}
 	}
 }
+
 /**
  * counting_sort - sorts an array based on number of coincidences
  * @array: array given by main
- * @size: size of array
- *
+ * @size: size of array*
  */
 void counting_sort(int *array, size_t size)
 {
@@ -49,10 +49,10 @@ void counting_sort(int *array, size_t size)
 		i++;
 		lenght--;
 	}
-
-	new_array = calloc(k, sizeof(int));
+	new_array = calloc(k + 1, sizeof(int));
 	if (!new_array)
 		return;
+	/*memset(new_array, 0, k);*/
 	for (j = 0; j <= k; j++)
 	{
 		for (x = 0; x < size; x++)
@@ -63,7 +63,10 @@ void counting_sort(int *array, size_t size)
 	}
 	for (j = 0; j <= k; j++)
 	{
-		new_array[j] += new_array[j - 1];
+		if (j == 0)
+			new_array[j] = 0;
+		else
+			new_array[j] = new_array[j] + new_array[j - 1];
 		printf("%d", new_array[j]);
 		if (j < k)
 			printf(", ");

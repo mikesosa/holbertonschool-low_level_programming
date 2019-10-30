@@ -22,6 +22,7 @@ void filling_array(int *array, int *new_array, int k)
 			s_position++;
 		}
 	}
+	free(new_array);
 }
 /**
  * counting_sort - sorts an array based on number of coincidences
@@ -33,7 +34,7 @@ void counting_sort(int *array, size_t size)
 {
 	int i = 0, j = 0, lenght = size, k = 0;
 	int *new_array;
-	size_t size2, x;
+	size_t x;
 
 	if (size < 2 || !(*array) || !array)
 		return;
@@ -45,9 +46,10 @@ void counting_sort(int *array, size_t size)
 		lenght--;
 	}
 
-	size2 = k;
 	new_array = malloc(sizeof(int) * k);
-	memset(new_array, 0, size2);
+	if (!new_array)
+		return;
+	memset(new_array, 0, k);
 	for (j = 0; j <= k; j++)
 	{
 		for (x = 0; x < size; x++)
@@ -67,5 +69,4 @@ void counting_sort(int *array, size_t size)
 	}
 
 	filling_array(array, new_array, k);
-	free(new_array);
 }

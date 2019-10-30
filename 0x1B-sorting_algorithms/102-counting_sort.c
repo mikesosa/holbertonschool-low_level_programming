@@ -46,10 +46,10 @@ void counting_sort(int *array, size_t size)
 		lenght--;
 	}
 
-	new_array = malloc(sizeof(int) * k);
+	new_array = calloc(k, sizeof(int));
 	if (!new_array)
 		return;
-	memset(new_array, 0, k);
+	//memset(new_array, 0, k);
 	for (j = 0; j <= k; j++)
 	{
 		for (x = 0; x < size; x++)

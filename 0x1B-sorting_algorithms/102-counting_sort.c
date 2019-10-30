@@ -35,7 +35,7 @@ void counting_sort(int *array, size_t size)
 	int *new_array;
 	size_t size2, x;
 
-	if (size < 2)
+	if (size < 2 || !(*array) || !array)
 		return;
 	while (lenght)
 	{

@@ -25,5 +25,6 @@ void quick_sort(int *array, size_t size);
 size_t partition(int *array, int lo, int hi, size_t size);
 void quicksort(int *array, int lo, int hi, size_t size);
 void counting_sort(int *array, size_t size);
+void filling_array(int *array, int *new_array, int k);
 
 #endif

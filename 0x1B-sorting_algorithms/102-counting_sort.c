@@ -46,7 +46,7 @@ void counting_sort(int *array, size_t size)
 		lenght--;
 	}
 
-	new_array = calloc(k, sizeof(int));
+	new_array = malloc(sizeof(int) * k);
 	if (!new_array)
 		return;
 	//memset(new_array, 0, k);

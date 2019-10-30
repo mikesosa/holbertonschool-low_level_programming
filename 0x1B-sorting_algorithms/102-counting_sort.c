@@ -11,18 +11,22 @@
  */
 void filling_array(int *array, int *new_array, int k)
 {
-	int last_n = 0, s_position = 0, j;
+	int last_n = 0, s_position = 0, j, x;
 
 	for (j = 0; j <= k; j++)
 	{
 		if (new_array[j] > last_n)
 		{
-			array[s_position] = j;
-			last_n = new_array[j];
-			s_position++;
+			x = new_array[j] - last_n;
+			while(x)
+			{
+				array[s_position] = j;
+				last_n = new_array[j];
+				s_position++;
+				x--;
+			}
 		}
 	}
-	free(new_array);
 }
 /**
  * counting_sort - sorts an array based on number of coincidences
@@ -49,7 +53,6 @@ void counting_sort(int *array, size_t size)
 	new_array = calloc(k, sizeof(int));
 	if (!new_array)
 		return;
-	/*memset(new_array, 0, k);*/
 	for (j = 0; j <= k; j++)
 	{
 		for (x = 0; x < size; x++)
@@ -67,6 +70,6 @@ void counting_sort(int *array, size_t size)
 		else
 			printf("\n");
 	}
-
 	filling_array(array, new_array, k);
+	free(new_array);
 }

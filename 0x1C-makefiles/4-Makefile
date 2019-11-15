@@ -1,0 +1,21 @@
+# Makefile... its raining in Bogota!
+
+NAME = holberton
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+CC = gcc
+RM = rm
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) -f *~ $(NAME)
+
+oclean:
+	$(RM) -f $(OBJ)
+
+fclean: clean oclean
+
+re: oclean all
